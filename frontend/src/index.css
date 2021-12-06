@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  a.active {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .w-600 {
+    width: 600px;
+  }
+}
