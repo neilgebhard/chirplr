@@ -46,15 +46,20 @@ const Tweet = (props) => {
         <div className="flex justify-between max-w-sm text-gray-400">
           <button
             disabled
+            title="Comment"
             className="flex items-center text-sm gap-x-3 p-2 hover:bg-blue-100 hover:text-blue-500 rounded-full cursor-not-allowed"
           >
             <ChatIcon className="h-5 w-5" /> 0
           </button>
-          <button className="flex items-center text-sm gap-x-3 p-2 hover:bg-green-100 hover:text-green-500 rounded-full cursor-not-allowed">
+          <button
+            title="Retweet"
+            className="flex items-center text-sm gap-x-3 p-2 hover:bg-green-100 hover:text-green-500 rounded-full cursor-not-allowed"
+          >
             <ShareIcon className="h-5 w-5" /> 0
           </button>
           <button
             onClick={handleLike}
+            title="Like"
             className={classNames(
               "flex items-center text-sm gap-x-3 p-2 hover:bg-red-100 hover:text-red-500 rounded-full",
               liked ? "text-red-500" : ""
@@ -62,7 +67,10 @@ const Tweet = (props) => {
           >
             <HeartIcon className="h-5 w-5" /> {tweet.likes.length}
           </button>
-          <button className="p-2 hover:bg-blue-100 hover:text-blue-500 rounded-full cursor-not-allowed">
+          <button
+            title="Share"
+            className="p-2 hover:bg-blue-100 hover:text-blue-500 rounded-full cursor-not-allowed"
+          >
             <UploadIcon className="h-5 w-5" />
           </button>
         </div>
