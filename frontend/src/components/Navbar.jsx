@@ -66,7 +66,7 @@ const Navbar = () => {
     {
       name: "More",
       icon: <DotsCircleHorizontalIcon className="h-7 w-7" />,
-      to: `/`,
+      to: `/more`,
       disabled: true,
     },
   ];
@@ -79,8 +79,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="inline-flex flex-col justify-between sm:w-60 h-screen sticky top-0">
-      <div className="inline-flex flex-col">
+    <nav className="inline-flex flex-col justify-between sm:w-60 h-screen sticky top-0 overflow-y-auto">
+      <div className="inline-flex flex-col overflow-y-auto">
         <NavLink to="/" title="Home">
           <ChatAlt2Icon className="h-14 w-14 mb-2 p-2 text-blue-500 hover:bg-blue-100 rounded-full" />
         </NavLink>
@@ -95,7 +95,7 @@ const Navbar = () => {
             {link.icon} <span className="hidden sm:inline">{link.name}</span>
           </NavLink>
         ))}
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 mt-3 rounded-full">
+        <button className="bg-gray-400 text-white font-bold py-4 mt-3 rounded-full cursor-not-allowed">
           T<span className="hidden sm:inline">weet</span>
         </button>
       </div>
