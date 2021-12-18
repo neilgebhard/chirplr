@@ -5,7 +5,6 @@ import { useAuth } from "../../context/auth";
 import axios from "axios";
 
 Modal.setAppElement("#root");
-
 Modal.defaultStyles = {}; // Flushes all of react-modal's styles
 
 const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
