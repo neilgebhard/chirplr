@@ -18,7 +18,7 @@ Features so far:
 - Likes: ❤️ other people's tweets
 - Profile: Update various aspects of your profile
 
-And that's it at the moment! Twitter is a massive website. It would take time to clone everything.
+And that's it at the moment! Twitter is a massive website. It takes time to clone everything.
 
 ## Technologies
 
@@ -92,6 +92,6 @@ To deploy to Heroku:
 
 ```
 heroku create
-git push heroku main
+git push heroku master
 heroku open
 ```

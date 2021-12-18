@@ -36,12 +36,13 @@ const Tweet = (props) => {
       <div className="w-full">
         <Link to={`/${username}`}>
           <span className="font-bold hover:underline">{name}</span>
-          <span className="text-gray-500 ml-1">@{username}</span>
-          <span className="text-gray-500 ml-1">·</span>
-          <span className="text-gray-500 ml-1">
-            {moment(createdAt).fromNow()}
-          </span>
         </Link>
+        <span className="text-gray-500 ml-1">@{username}</span>
+        <span className="text-gray-500 ml-1">·</span>
+        <span className="text-gray-500 ml-1">
+          {moment(createdAt).fromNow()}
+        </span>
+
         <p>{text}</p>
         <div className="flex justify-between max-w-sm text-gray-400">
           <button

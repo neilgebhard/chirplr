@@ -24,7 +24,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen flex items-center justify-center px-1">
       <div className="w-96">
         <form onSubmit={handleSubmit}>
           <ChatAlt2Icon className="h-12 w-12 mb-10 text-blue-500 mx-auto" />

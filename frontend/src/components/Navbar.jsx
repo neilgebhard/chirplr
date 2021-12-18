@@ -79,7 +79,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex flex-col justify-between w-60 h-screen sticky top-0">
+    <nav className="inline-flex flex-col justify-between sm:w-60 h-screen sticky top-0">
       <div className="inline-flex flex-col">
         <NavLink to="/" title="Home">
           <ChatAlt2Icon className="h-14 w-14 mb-2 p-2 text-blue-500 hover:bg-blue-100 rounded-full" />
@@ -87,7 +87,7 @@ const Navbar = () => {
         {links.map((link, i) => (
           <NavLink
             key={i}
-            className={`flex items-center gap-x-5 mb-3 px-4 py-2 hover:bg-gray-200 rounded-full text-xl ${
+            className={`inline-flex items-center gap-x-5 mb-3 px-4 py-2 hover:bg-gray-200 rounded-full text-xl ${
               link.disabled ? " cursor-not-allowed text-gray-400" : ""
             }`}
             to={link.to}
@@ -99,7 +99,7 @@ const Navbar = () => {
           T<span className="hidden sm:inline">weet</span>
         </button>
       </div>
-      <Disclosure as="nav">
+      <Disclosure as="div">
         {({ open }) => (
           <>
             <Menu as="div" className="relative">

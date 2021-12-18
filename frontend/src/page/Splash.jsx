@@ -3,7 +3,7 @@ import { ChatAlt2Icon } from "@heroicons/react/solid";
 
 const Splash = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen flex items-center justify-center px-1">
       <div className="w-96">
         <ChatAlt2Icon className="h-12 w-12 mb-10 text-blue-500 mx-auto" />
         <p className="text-4xl font-bold mb-10">Happening now</p>

@@ -6,19 +6,7 @@ import axios from "axios";
 
 Modal.setAppElement("#root");
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    width: "600px",
-    padding: "0",
-    borderRadius: "15px",
-  },
-};
+Modal.defaultStyles = {}; // Flushes all of react-modal's styles
 
 const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
   const { user, setUser } = useAuth();
@@ -49,7 +37,6 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={() => setIsOpen(false)}
-      style={customStyles}
       contentLabel="Profile Modal"
     >
       <form onSubmit={handleSubmit}>
