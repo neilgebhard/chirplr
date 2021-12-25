@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -34,41 +33,41 @@ const Navbar = () => {
       icon: <HashtagIcon className="h-7 w-7" />,
       to: "/explore",
     },
-    {
-      name: "Notifications",
-      icon: <BellIcon className="h-7 w-7" />,
-      to: "/notifications",
-      disabled: true,
-    },
-    {
-      name: "Messages",
-      icon: <MailIcon className="h-7 w-7" />,
-      to: "/messages",
-      disabled: true,
-    },
-    {
-      name: "Bookmarks",
-      icon: <BookmarkIcon className="h-7 w-7" />,
-      to: "/bookmarks",
-      disabled: true,
-    },
-    {
-      name: "Lists",
-      icon: <ClipboardListIcon className="h-7 w-7" />,
-      to: "/lists",
-      disabled: true,
-    },
+    // {
+    //   name: "Notifications",
+    //   icon: <BellIcon className="h-7 w-7" />,
+    //   to: "/notifications",
+    //   disabled: true,
+    // },
+    // {
+    //   name: "Messages",
+    //   icon: <MailIcon className="h-7 w-7" />,
+    //   to: "/messages",
+    //   disabled: true,
+    // },
+    // {
+    //   name: "Bookmarks",
+    //   icon: <BookmarkIcon className="h-7 w-7" />,
+    //   to: "/bookmarks",
+    //   disabled: true,
+    // },
+    // {
+    //   name: "Lists",
+    //   icon: <ClipboardListIcon className="h-7 w-7" />,
+    //   to: "/lists",
+    //   disabled: true,
+    // },
     {
       name: "Profile",
       icon: <UserIcon className="h-7 w-7" />,
       to: `/${username}`,
     },
-    {
-      name: "More",
-      icon: <DotsCircleHorizontalIcon className="h-7 w-7" />,
-      to: `/more`,
-      disabled: true,
-    },
+    // {
+    //   name: "More",
+    //   icon: <DotsCircleHorizontalIcon className="h-7 w-7" />,
+    //   to: `/more`,
+    //   disabled: true,
+    // },
   ];
 
   const handleLogout = () => {
@@ -79,7 +78,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="inline-flex flex-col justify-between sm:w-60 h-screen sticky top-0 overflow-y-auto">
+    <nav className="inline-flex flex-col justify-between sm:w-60 h-screen sticky top-0 overflow-y-auto p-1">
       <div className="inline-flex flex-col overflow-y-auto">
         <NavLink to="/" title="Home">
           <ChatAlt2Icon className="h-14 w-14 mb-2 p-2 text-blue-500 hover:bg-blue-100 rounded-full" />
@@ -95,9 +94,9 @@ const Navbar = () => {
             {link.icon} <span className="hidden sm:inline">{link.name}</span>
           </NavLink>
         ))}
-        <button className="bg-gray-400 text-white font-bold py-4 mt-3 rounded-full cursor-not-allowed">
+        {/* <button className="bg-gray-400 text-white font-bold py-4 mt-3 rounded-full cursor-not-allowed">
           T<span className="hidden sm:inline">weet</span>
-        </button>
+        </button> */}
       </div>
       <Disclosure as="div">
         {({ open }) => (
@@ -129,7 +128,7 @@ const Navbar = () => {
                         type="button"
                         className={classNames(
                           active ? "bg-gray-100" : "",
-                          "block px-4 py-2 text-gray-700 text-lg"
+                          "block px-4 py-2 text-gray-700 text-lg outline-none"
                         )}
                       >
                         <LogoutIcon className="h-6 w-6 inline mr-2" /> Log out @

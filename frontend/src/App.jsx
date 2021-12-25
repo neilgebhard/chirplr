@@ -30,7 +30,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main className="flex justify-center gap-x-2">
+      <main className="flex justify-center">
         <Navbar />
         <Routes>
           <Route path="/" element={<Feed />} />
