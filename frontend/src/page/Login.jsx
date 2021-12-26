@@ -14,8 +14,8 @@ const Signup = () => {
     const password = e.target.elements.password.value;
 
     axios.post("/api/login", { email, password }).then(({ data }) => {
-      setUser(data);
       navigate(`/${data.username}`);
+      setUser(data);
     });
   };
 
