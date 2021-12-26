@@ -21,7 +21,6 @@ router.get(
 // @access   Public
 router.get(
   "/tweets/feed",
-  protect,
   asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
     // add self tweets to feed
@@ -68,7 +67,6 @@ router.get(
 // @access   Private
 router.post(
   "/tweets",
-  protect,
   asyncHandler(async (req, res) => {
     const { _id, username, name } = req.user;
     const { text } = req.body;
@@ -90,7 +88,6 @@ router.post(
 // @access   Private
 router.delete(
   "/tweets/:tweetId",
-  protect,
   asyncHandler(async (req, res) => {
     const tweet = await Tweet.findById(req.params.tweetId);
 
