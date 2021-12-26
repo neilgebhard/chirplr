@@ -6,12 +6,7 @@ import { UserCircleIcon, ChatAlt2Icon } from "@heroicons/react/solid";
 import {
   HomeIcon,
   HashtagIcon,
-  BellIcon,
-  MailIcon,
-  BookmarkIcon,
-  ClipboardListIcon,
   UserIcon,
-  DotsCircleHorizontalIcon,
   LogoutIcon,
 } from "@heroicons/react/outline";
 import axios from "axios";
@@ -33,41 +28,11 @@ const Navbar = () => {
       icon: <HashtagIcon className="h-7 w-7" />,
       to: "/explore",
     },
-    // {
-    //   name: "Notifications",
-    //   icon: <BellIcon className="h-7 w-7" />,
-    //   to: "/notifications",
-    //   disabled: true,
-    // },
-    // {
-    //   name: "Messages",
-    //   icon: <MailIcon className="h-7 w-7" />,
-    //   to: "/messages",
-    //   disabled: true,
-    // },
-    // {
-    //   name: "Bookmarks",
-    //   icon: <BookmarkIcon className="h-7 w-7" />,
-    //   to: "/bookmarks",
-    //   disabled: true,
-    // },
-    // {
-    //   name: "Lists",
-    //   icon: <ClipboardListIcon className="h-7 w-7" />,
-    //   to: "/lists",
-    //   disabled: true,
-    // },
     {
       name: "Profile",
       icon: <UserIcon className="h-7 w-7" />,
       to: `/${username}`,
     },
-    // {
-    //   name: "More",
-    //   icon: <DotsCircleHorizontalIcon className="h-7 w-7" />,
-    //   to: `/more`,
-    //   disabled: true,
-    // },
   ];
 
   const handleLogout = () => {
@@ -94,9 +59,6 @@ const Navbar = () => {
             {link.icon} <span className="hidden sm:inline">{link.name}</span>
           </NavLink>
         ))}
-        {/* <button className="bg-gray-400 text-white font-bold py-4 mt-3 rounded-full cursor-not-allowed">
-          T<span className="hidden sm:inline">weet</span>
-        </button> */}
       </div>
       <Disclosure as="div">
         {({ open }) => (
