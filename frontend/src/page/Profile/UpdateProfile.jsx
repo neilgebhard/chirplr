@@ -14,6 +14,7 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
   const [bio, setBio] = useState(user.bio || "");
   const [location, setLocation] = useState(user.location || "");
   const [website, setWebsite] = useState(user.website || "");
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +30,9 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
         setUser(data);
         setProfile(data);
         setIsOpen(false);
+      })
+      .catch((e) => {
+        setError(true);
       });
   };
 
@@ -111,6 +115,9 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
           />
         </div>
       </form>
+      {error && (
+        <p className="text-red-500">There seems to have been an error.</p>
+      )}
     </Modal>
   );
 };

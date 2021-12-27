@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/auth";
@@ -6,6 +7,7 @@ import { ChatAlt2Icon } from "@heroicons/react/solid";
 const Signup = () => {
   const { setUser } = useAuth();
   const navigate = useNavigate();
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +22,9 @@ const Signup = () => {
       .then(({ data }) => {
         setUser(data);
         navigate(`/`);
+      })
+      .catch((e) => {
+        setError(true);
       });
   };
 
@@ -86,6 +91,7 @@ const Signup = () => {
             Sign up
           </button>
         </form>
+        {error && <p className="text-red-500">Account registration failed.</p>}
         <p className="mt-10 mb-4">Already have an account?</p>
         <Link
           className="bg-white hover:bg-blue-50 text-blue-500 text-center border border-gray-400 rounded-full py-2 px-4 font-bold block w-full"

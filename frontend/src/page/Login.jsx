@@ -1,3 +1,4 @@
+import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/auth";
 import { ChatAlt2Icon } from "@heroicons/react/solid";
@@ -6,6 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 const Signup = () => {
   const { setUser } = useAuth();
   const navigate = useNavigate();
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,10 +15,15 @@ const Signup = () => {
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
 
-    axios.post("/api/login", { email, password }).then(({ data }) => {
-      navigate(`/${data.username}`);
-      setUser(data);
-    });
+    axios
+      .post("/api/login", { email, password })
+      .then(({ data }) => {
+        navigate(`/${data.username}`);
+        setUser(data);
+      })
+      .catch(() => {
+        setError(true);
+      });
   };
 
   return (
@@ -56,6 +63,7 @@ const Signup = () => {
             Log in
           </button>
         </form>
+        {error && <p className="text-red-500">Authentication failed.</p>}
         <p className="mt-10 mb-4">Don't have an account?</p>
         <Link
           className="bg-white hover:bg-blue-50 text-blue-500 text-center border border-gray-400 rounded-full py-2 px-4 font-bold block w-full"
