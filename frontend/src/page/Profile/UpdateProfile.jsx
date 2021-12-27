@@ -55,7 +55,7 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
             Save
           </button>
         </div>
-        <div className="bg-gray-400 h-48"></div>
+        <div className="bg-gray-400 h-48 cursor-not-allowed"></div>
         <div className="relative ml-3">
           <UserCircleIcon className="h-28 w-28 text-gray-600 border-white bg-white rounded-full absolute -top-14" />
         </div>
@@ -113,11 +113,11 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
             value={website}
             onChange={(e) => setWebsite(e.target.value)}
           />
+          {error && (
+            <p className="text-red-500">There seems to have been an error.</p>
+          )}
         </div>
       </form>
-      {error && (
-        <p className="text-red-500">There seems to have been an error.</p>
-      )}
     </Modal>
   );
 };
