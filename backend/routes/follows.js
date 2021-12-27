@@ -9,6 +9,7 @@ const User = require("../models/user");
 // @access   Private
 router.post(
   "/users/:id/follow",
+  protect,
   asyncHandler(async (req, res) => {
     const [user, userToFollow] = await Promise.all([
       User.findOneAndUpdate(
@@ -32,6 +33,7 @@ router.post(
 // @access   Private
 router.post(
   "/users/:id/unfollow",
+  protect,
   asyncHandler(async (req, res) => {
     const [user, userToUnfollow] = await Promise.all([
       User.findOneAndUpdate(

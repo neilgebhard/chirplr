@@ -10,6 +10,7 @@ const User = require("../models/user");
 // @access   Private
 router.post(
   "/tweets/:id/like",
+  protect,
   asyncHandler(async (req, res) => {
     const [tweet, user] = await Promise.all([
       Tweet.findOneAndUpdate(
@@ -33,6 +34,7 @@ router.post(
 // @access   Private
 router.post(
   "/tweets/:id/unlike",
+  protect,
   asyncHandler(async (req, res) => {
     const [tweet, user] = await Promise.all([
       Tweet.findOneAndUpdate(

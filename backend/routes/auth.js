@@ -20,7 +20,7 @@ router.post(
 
       res.cookie("token", token, {
         httpOnly: true,
-        secure: true,
+        secure: false, // TODO: change to true when in production
       });
 
       res.json(user);
