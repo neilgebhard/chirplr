@@ -43,7 +43,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="inline-flex flex-col justify-between sm:w-60 h-screen sticky top-0 overflow-y-auto p-1">
+    <nav
+      className="inline-flex flex-col justify-between sm:w-60 h-screen sticky top-0 overflow-y-auto p-1"
+      style={{ minWidth: "64px" }}
+    >
       <div className="inline-flex flex-col overflow-y-auto">
         <NavLink to="/" title="Home">
           <ChatAlt2Icon className="h-14 w-14 mb-2 p-2 text-blue-500 hover:bg-blue-100 rounded-full" />
