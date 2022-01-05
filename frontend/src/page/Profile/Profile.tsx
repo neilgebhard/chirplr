@@ -11,12 +11,13 @@ import axios from "axios";
 import moment from "moment";
 import UpdateProfile from "./UpdateProfile";
 import Tweet from "../../components/Tweet";
+import type { User, Tweet as TweetType } from "./../../dataStructure";
 
 const Profile = () => {
   const { user, setUser } = useAuth();
 
-  const [tweets, setTweets] = useState([]);
-  const [profile, setProfile] = useState({});
+  const [tweets, setTweets] = useState<TweetType[]>([]);
+  const [profile, setProfile] = useState<User>({} as User);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const params = useParams();

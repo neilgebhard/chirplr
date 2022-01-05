@@ -21,4 +21,6 @@ export type User = {
   bio: string;
   location: string;
   website: string;
+  createdAt: string;
+  updatedAt: string;
 };

@@ -1,6 +1,10 @@
 import { UserCircleIcon } from "@heroicons/react/solid";
 
-const AddTweet = ({ handleAddTweet }) => {
+type AppProps = {
+  handleAddTweet: React.FormEventHandler<HTMLFormElement>;
+};
+
+const AddTweet = ({ handleAddTweet }: AppProps) => {
   return (
     <div className="flex p-4">
       <UserCircleIcon className="h-12 w-12 text-gray-600" />
