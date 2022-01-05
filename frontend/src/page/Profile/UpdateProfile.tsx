@@ -3,11 +3,18 @@ import Modal from "react-modal";
 import { UserCircleIcon, XIcon } from "@heroicons/react/solid";
 import { useAuth } from "../../context/auth";
 import axios from "axios";
+import type { User } from "../../dataStructure";
 
 Modal.setAppElement("#root");
 Modal.defaultStyles = {}; // Flushes all of react-modal's styles
 
-const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }) => {
+type AppProps = {
+  modalIsOpen: boolean;
+  setIsOpen: boolean;
+  setProfile: (user: User) => void;
+};
+
+const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }: AppProps) => {
   const { user, setUser } = useAuth();
 
   const [name, setName] = useState(user.name || "");
