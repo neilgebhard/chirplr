@@ -10,7 +10,7 @@ Modal.defaultStyles = {}; // Flushes all of react-modal's styles
 
 type AppProps = {
   modalIsOpen: boolean;
-  setIsOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
   setProfile: (user: User) => void;
 };
 
@@ -23,7 +23,7 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }: AppProps) => {
   const [website, setWebsite] = useState(user.website || "");
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios
@@ -89,7 +89,6 @@ const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }: AppProps) => {
           <textarea
             className="appearance-none block w-full text-gray-700 border border-gray-300 rounded py-3 px-4 mb-6 leading-tight focus:outline-none focus:border-blue-400"
             id="bio"
-            type="text"
             rows={3}
             value={bio}
             onChange={(e) => setBio(e.target.value)}
