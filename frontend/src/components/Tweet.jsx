@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   ChatIcon,
   ShareIcon,
@@ -7,14 +6,14 @@ import {
   UploadIcon,
 } from "@heroicons/react/outline";
 import { UserIcon } from "@heroicons/react/solid";
-import moment from "moment";
 import axios from "axios";
 import { useAuth } from "../context/auth";
 import { classNames } from "../util";
+import TweetBody from "./TweetBody";
 
 const Tweet = (props) => {
   const [tweet, setTweet] = useState(props.tweet);
-  const { _id, name, username, text, createdAt } = tweet;
+  const { _id } = tweet;
   const { user, setUser } = useAuth();
 
   const handleLike = () => {
@@ -34,16 +33,7 @@ const Tweet = (props) => {
         <UserIcon className="h-12 w-12 text-gray-600" />
       </div>
       <div className="w-full">
-        <Link to={`/${username}`}>
-          <span className="font-bold hover:underline">{name}</span>
-        </Link>
-        <span className="text-gray-500 ml-1">@{username}</span>
-        <span className="text-gray-500 ml-1">·</span>
-        <span className="text-gray-500 ml-1">
-          {moment(createdAt).fromNow()}
-        </span>
-
-        <p>{text}</p>
+        <TweetBody {...tweet} />
         <div className="flex justify-between max-w-sm text-gray-400">
           <button
             disabled
