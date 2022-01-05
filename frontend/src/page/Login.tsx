@@ -9,11 +9,16 @@ const Signup = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const email = e.target.elements.email.value;
-    const password = e.target.elements.password.value;
+    const target = e.target as typeof e.target & {
+      email: { value: string };
+      password: { value: string };
+    };
+
+    const email = target.email.value;
+    const password = target.password.value;
 
     axios
       .post("/api/login", { email, password })

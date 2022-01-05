@@ -9,13 +9,20 @@ const Signup = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const name = e.target.elements.name.value;
-    const username = e.target.elements.username.value;
-    const email = e.target.elements.email.value;
-    const password = e.target.elements.password.value;
+    const target = e.target as typeof e.target & {
+      name: { value: string };
+      username: { value: string };
+      email: { value: string };
+      password: { value: string };
+    };
+
+    const name = target.name.value;
+    const username = target.username.value;
+    const email = target.email.value;
+    const password = target.password.value;
 
     axios
       .post("/api/users", { username, email, password, name })
