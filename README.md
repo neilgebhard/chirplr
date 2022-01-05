@@ -26,6 +26,7 @@ Some frameworks and libraries this project is made with:
 
 Frontend:
 
+- TypeScript: 4.5.4
 - React: 17.0.2
 - Tailwind CSS
 - react-router-dom: 5.3.0
