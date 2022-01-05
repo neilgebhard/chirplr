@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Tweet from "../components/Tweet";
+import type { Tweet as TweetType } from "../dataStructure";
 
 const Feed = () => {
-  const [tweets, setTweets] = useState([]);
+  const [tweets, setTweets] = useState<TweetType[]>([]);
 
   useEffect(() => {
     const fetchTweets = () => {
