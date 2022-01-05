@@ -41,10 +41,6 @@ Deployment:
 
 - Heroku
 
-Regrets:
-
-- I wish I used TypeScript.
-
 ## Setup
 
 To run this project locally, install dependencies using npm install. You'll need to create a .env file at the root of the project and at the root of /frontend.
