@@ -3,7 +3,20 @@ import { UserIcon } from "@heroicons/react/solid";
 import TweetBody from "./TweetBody";
 import TweetFooter from "./TweetFooter";
 
-const Tweet = (props) => {
+type AppProps = {
+  tweet: {
+    _id: string;
+    likes: string[];
+    username: string;
+    name: string;
+    text: string;
+    replies: object[];
+    createdAt: string;
+    updatedAt: string;
+  };
+};
+
+const Tweet = (props: AppProps) => {
   const [tweet, setTweet] = useState(props.tweet);
 
   return (
