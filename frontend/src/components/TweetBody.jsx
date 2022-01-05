@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-const TweetContent = ({ name, username, createdAt, text }) => {
+const TweetBody = ({ name, username, createdAt, text }) => {
   return (
     <>
       <Link to={`/${username}`}>
@@ -15,4 +15,4 @@ const TweetContent = ({ name, username, createdAt, text }) => {
   );
 };
 
-export default TweetContent;
+export default TweetBody;
