@@ -8,7 +8,24 @@ import { classNames } from "../util";
 import axios from "axios";
 import { useAuth } from "../context/auth";
 
-const TweetFooter = ({ _id, likes, setTweet }) => {
+type Tweet = {
+  _id: string;
+  likes: string[];
+  username: string;
+  name: string;
+  text: string;
+  replies: object[];
+  createdAt: string;
+  updatedAt: string;
+};
+
+type AppProps = {
+  _id: string;
+  likes: string[];
+  setTweet: (tweet: Tweet) => void;
+};
+
+const TweetFooter = ({ _id, likes, setTweet }: AppProps) => {
   const { user, setUser } = useAuth();
   const liked = likes.includes(user._id);
 

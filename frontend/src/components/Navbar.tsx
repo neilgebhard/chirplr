@@ -11,10 +11,12 @@ import {
 } from "@heroicons/react/outline";
 import axios from "axios";
 import { classNames } from "../util";
+import type { User } from "../dataStructure";
 
 const Navbar = () => {
-  const { name, username } = useAuth().user;
-  const { setUser } = useAuth();
+  const authContext = useAuth();
+  const { user, setUser } = authContext;
+  const { name, username } = user;
   const navigate = useNavigate();
 
   const links = [
@@ -31,13 +33,13 @@ const Navbar = () => {
     {
       name: "Profile",
       icon: <UserIcon className="h-7 w-7" />,
-      to: `/${username}`,
+      to: `/${user.username}`,
     },
   ];
 
   const handleLogout = () => {
     axios.post("/api/logout").then(() => {
-      setUser({});
+      setUser({} as User);
       navigate("/");
     });
   };

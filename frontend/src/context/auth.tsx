@@ -1,8 +1,22 @@
-import { useState, createContext, useEffect, useContext } from "react";
+import {
+  ReactNode,
+  useState,
+  createContext,
+  useEffect,
+  useContext,
+} from "react";
+import type { User } from "../dataStructure";
 
-const AuthContext = createContext();
+interface AuthContextInterface {
+  user: User;
+  setUser: (user: User) => void;
+}
 
-const AuthProvider = ({ children }) => {
+const AuthContext = createContext<AuthContextInterface>(
+  {} as AuthContextInterface
+);
+
+const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState(() =>
     JSON.parse(localStorage.getItem("user") || "{}")
   );
