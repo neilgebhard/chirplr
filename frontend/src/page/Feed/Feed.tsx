@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Tweet from "../../components/Tweet";
 import AddTweet from "./AddTweet";
-import { Tweet as TweetType } from "../../dataStructure";
+import { Tweet as TweetType } from "../../types";
 
 const Feed = () => {
   const [tweets, setTweets] = useState<TweetType[]>([]);

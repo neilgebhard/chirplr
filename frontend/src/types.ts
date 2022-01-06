@@ -14,7 +14,7 @@ export type User = {
   username: string;
   email: string;
   name: string;
-  idAdmin: boolean;
+  isAdmin: boolean;
   followers: string[];
   following: string[];
   likedTweets: string[];

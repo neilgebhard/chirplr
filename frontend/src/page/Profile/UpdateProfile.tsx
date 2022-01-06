@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { UserCircleIcon, XIcon } from "@heroicons/react/solid";
 import { useAuth } from "../../context/auth";
 import axios from "axios";
-import type { User } from "../../dataStructure";
+import type { User } from "../../types";
 
 Modal.setAppElement("#root");
 Modal.defaultStyles = {}; // Flushes all of react-modal's styles

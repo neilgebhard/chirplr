@@ -5,7 +5,7 @@ import {
   useEffect,
   useContext,
 } from "react";
-import type { User } from "../dataStructure";
+import type { User } from "../types";
 
 interface AuthContextInterface {
   user: User;
@@ -34,4 +34,4 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 const useAuth = () => useContext(AuthContext);
 
-export { AuthProvider, useAuth };
+export { AuthProvider, AuthContext, useAuth };

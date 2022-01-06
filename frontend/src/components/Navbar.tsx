@@ -11,7 +11,7 @@ import {
 } from "@heroicons/react/outline";
 import axios from "axios";
 import { classNames } from "../util";
-import type { User } from "../dataStructure";
+import type { User } from "../types";
 
 const Navbar = () => {
   const authContext = useAuth();
@@ -111,4 +111,4 @@ const Navbar = () => {
   );
 };
 
-export { Navbar };
+export default Navbar;

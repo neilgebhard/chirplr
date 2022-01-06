@@ -11,7 +11,7 @@ import axios from "axios";
 import moment from "moment";
 import UpdateProfile from "./UpdateProfile";
 import Tweet from "../../components/Tweet";
-import type { User, Tweet as TweetType } from "./../../dataStructure";
+import type { User, Tweet as TweetType } from "../../types";
 
 const Profile = () => {
   const { user, setUser } = useAuth();

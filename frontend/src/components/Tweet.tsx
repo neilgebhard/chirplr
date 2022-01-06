@@ -2,7 +2,7 @@ import { useState } from "react";
 import { UserIcon } from "@heroicons/react/solid";
 import TweetBody from "./TweetBody";
 import TweetFooter from "./TweetFooter";
-import type { Tweet as TweetType } from "../dataStructure";
+import type { Tweet as TweetType } from "../types";
 
 type AppProps = {
   tweet: TweetType;
