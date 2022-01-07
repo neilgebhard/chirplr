@@ -1,10 +1,12 @@
-import Feed from "../page/Feed/Feed";
+import Explore from "../page/Explore";
 import { render, screen } from "../test-utils";
 
 describe("Feed", () => {
   test("renders Feed component with tweets", async () => {
-    render(<Feed />);
-    expect(screen.getByRole("heading", { name: /home/i })).toBeInTheDocument();
+    render(<Explore />);
+    expect(
+      screen.getByRole("heading", { name: /explore/i })
+    ).toBeInTheDocument();
     expect((await screen.findAllByRole("listitem")).length).toBe(1);
 
     expect(

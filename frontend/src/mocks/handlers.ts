@@ -1,7 +1,7 @@
 // src/mocks/handlers.js
 import { rest } from "msw";
 
-const feed = [
+const tweets = [
   {
     _id: "61a9e72bac108e5795e9ded7",
     username: "doug1245",
@@ -30,13 +30,16 @@ const user = {
 };
 
 export const handlers = [
-  rest.get("/api/tweets/feed", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(feed));
-  }),
   rest.get("/api/users/test", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(user));
   }),
+  rest.get("/api/tweets/feed", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(tweets));
+  }),
   rest.get("/api/users/test/tweets", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json([]));
+    return res(ctx.status(200), ctx.json(tweets));
+  }),
+  rest.get("/api/tweets", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(tweets));
   }),
 ];
