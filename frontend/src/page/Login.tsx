@@ -34,7 +34,7 @@ const Signup = () => {
   return (
     <div className="h-screen flex items-center justify-center px-1">
       <div className="w-96">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid="form">
           <ChatAlt2Icon className="h-12 w-12 mb-10 text-blue-500 mx-auto" />
           <h1 className="block mb-10 text-2xl font-bold">Sign in to Twitter</h1>
           <label
@@ -47,6 +47,7 @@ const Signup = () => {
             className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="email"
             id="email"
+            name="email"
             required
           />
           <label
@@ -59,6 +60,7 @@ const Signup = () => {
             className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-6 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="password"
             id="password"
+            name="password"
             required
           />
           <button
