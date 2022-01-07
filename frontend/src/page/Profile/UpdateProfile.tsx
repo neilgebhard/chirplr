@@ -5,7 +5,11 @@ import { useAuth } from "../../context/auth";
 import axios from "axios";
 import type { User } from "../../types";
 
-Modal.setAppElement("#root");
+const modalRoot = document.createElement("div");
+modalRoot.setAttribute("id", "modal-root");
+document.body.appendChild(modalRoot);
+
+Modal.setAppElement("#modal-root");
 Modal.defaultStyles = {}; // Flushes all of react-modal's styles
 
 type AppProps = {

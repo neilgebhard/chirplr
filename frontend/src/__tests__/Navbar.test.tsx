@@ -8,10 +8,10 @@ describe("Navbar", () => {
     expect(screen.getByRole("link", { name: /explore/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /profile/i })).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /tiffany valencia/i })
+      screen.getByRole("button", { name: /test name/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /tiffany123/i })
+      screen.getByRole("button", { name: /test123/i })
     ).toBeInTheDocument();
   });
 });
