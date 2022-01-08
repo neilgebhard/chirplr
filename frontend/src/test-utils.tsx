@@ -19,7 +19,7 @@ const providerProps = {
     createdAt: "",
     updatedAt: "",
   },
-  setUser: () => {},
+  setUser: jest.fn(),
 };
 
 const AllTheProviders: FC = ({ children }) => {

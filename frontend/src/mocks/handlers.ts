@@ -42,4 +42,7 @@ export const handlers = [
   rest.get("/api/tweets", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(tweets));
   }),
+  rest.post("/api/tweets", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(tweets));
+  }),
 ];
