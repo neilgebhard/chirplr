@@ -2,7 +2,8 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth";
-import { UserCircleIcon, ChatAlt2Icon } from "@heroicons/react/solid";
+import { UserCircleIcon } from "@heroicons/react/solid";
+import { FaTwitter } from "react-icons/fa";
 import {
   HomeIcon,
   HashtagIcon,
@@ -51,7 +52,7 @@ const Navbar = () => {
     >
       <div className="inline-flex flex-col overflow-y-auto">
         <NavLink to="/" title="Home">
-          <ChatAlt2Icon className="h-14 w-14 mb-2 p-2 text-blue-500 hover:bg-blue-100 rounded-full" />
+          <FaTwitter size="3.5rem" className="mb-2 p-2 text-blue-500" />
         </NavLink>
         {links.map((link, i) => (
           <NavLink
