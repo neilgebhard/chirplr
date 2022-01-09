@@ -27,7 +27,7 @@ const schema = yup
 const Signup = () => {
   const { setUser } = useAuth();
   const navigate = useNavigate();
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
 
   const {
     register,
@@ -38,6 +38,7 @@ const Signup = () => {
   });
 
   const onSubmit = (data: IFormInputs) => {
+    setError("");
     axios
       .post("/api/users", data)
       .then(({ data }) => {
@@ -45,7 +46,7 @@ const Signup = () => {
         navigate(`/`);
       })
       .catch((e) => {
-        setError(true);
+        setError("Account registration failed.");
       });
   };
 
@@ -92,6 +93,7 @@ const Signup = () => {
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             id="email"
+            type="text"
             {...register("email")}
           />
           <FormError message={errors.email?.message} />
@@ -115,7 +117,7 @@ const Signup = () => {
             Sign up
           </button>
         </form>
-        {error && <p className="text-red-500">Account registration failed.</p>}
+        <FormError message={error} />
         <p className="mt-10 mb-4">Already have an account?</p>
         <Link
           className="bg-white hover:bg-blue-50 text-blue-500 text-center border border-gray-400 rounded-full py-2 px-4 font-bold block w-full"
