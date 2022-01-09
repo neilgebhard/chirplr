@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./page/Login";
 import Signup from "./page/Signup";
-import Feed from "./page/Feed/Feed";
+import Feed from "./page/Feed";
 import Explore from "./page/Explore";
 import Splash from "./page/Splash";
-import Profile from "./page/Profile/Profile";
+import Profile from "./page/Profile";
 import axios from "axios";
 import { useAuth } from "./context/auth";
 

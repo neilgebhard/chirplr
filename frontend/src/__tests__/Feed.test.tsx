@@ -1,4 +1,4 @@
-import Feed from "../page/Feed/Feed";
+import Feed from "../page/Feed";
 import { render, screen } from "../test-utils";
 
 describe("Feed", () => {

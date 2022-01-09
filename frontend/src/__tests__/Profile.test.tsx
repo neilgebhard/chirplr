@@ -1,5 +1,5 @@
 import { render, screen } from "../test-utils";
-import Profile from "../page/Profile/Profile";
+import Profile from "../page/Profile";
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
