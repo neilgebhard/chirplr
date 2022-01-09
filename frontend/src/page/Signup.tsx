@@ -2,30 +2,44 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/auth";
-import { ChatAlt2Icon } from "@heroicons/react/solid";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import FormError from "../components/FormError";
+import { FaTwitter } from "react-icons/fa";
+
+interface IFormInputs {
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+}
+
+const schema = yup
+  .object({
+    name: yup.string().min(3).required(),
+    username: yup.string().min(3).required(),
+    email: yup.string().email().required(),
+    password: yup.string().min(8).required(),
+  })
+  .required();
 
 const Signup = () => {
   const { setUser } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInputs>({
+    resolver: yupResolver(schema),
+  });
 
-    const target = e.target as typeof e.target & {
-      name: { value: string };
-      username: { value: string };
-      email: { value: string };
-      password: { value: string };
-    };
-
-    const name = target.name.value;
-    const username = target.username.value;
-    const email = target.email.value;
-    const password = target.password.value;
-
+  const onSubmit = (data: IFormInputs) => {
     axios
-      .post("/api/users", { username, email, password, name })
+      .post("/api/users", data)
       .then(({ data }) => {
         setUser(data);
         navigate(`/`);
@@ -36,10 +50,10 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center px-1">
+    <div className="min-h-screen flex items-center justify-center px-1">
       <div className="w-96">
-        <form onSubmit={handleSubmit} data-testid="form">
-          <ChatAlt2Icon className="h-12 w-12 mb-10 text-blue-500 mx-auto" />
+        <form onSubmit={handleSubmit(onSubmit)} data-testid="form">
+          <FaTwitter size="3rem" className="my-10  text-blue-500 mx-auto" />
           <h1 className="block mb-10 text-2xl font-bold">
             Sign up for Twitter
           </h1>
@@ -50,12 +64,12 @@ const Signup = () => {
             Name
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-            type="text"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             id="name"
-            name="name"
-            required
+            type="text"
+            {...register("name")}
           />
+          <FormError message={errors.name?.message} />
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
             htmlFor="username"
@@ -63,12 +77,12 @@ const Signup = () => {
             Username
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-            type="text"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mleading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             id="username"
-            name="username"
-            required
+            type="text"
+            {...register("username")}
           />
+          <FormError message={errors.username?.message} />
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
             htmlFor="email"
@@ -76,12 +90,11 @@ const Signup = () => {
             Email
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-            type="email"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             id="email"
-            name="email"
-            required
+            {...register("email")}
           />
+          <FormError message={errors.email?.message} />
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
             htmlFor="password"
@@ -89,14 +102,14 @@ const Signup = () => {
             Password
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-6 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="password"
             id="password"
-            name="password"
-            required
+            {...register("password")}
           />
+          <FormError message={errors.password?.message} />
           <button
-            className="bg-black hover:bg-gray-800 text-white block rounded-full py-2 px-4 font-bold w-full"
+            className="bg-black hover:bg-gray-800 text-white inline-block rounded-full py-2 px-4 mt-3 font-bold w-full"
             type="submit"
           >
             Sign up
