@@ -12,7 +12,7 @@ const AddTweet = ({ handleAddTweet }: AppProps) => {
         <input
           className="appearance-none placeholder-gray-500 text-xl block w-full outline-none py-3 px-4 mb-3"
           placeholder="What's happening?"
-          id="name"
+          id="text"
           type="text"
         />
         <button
