@@ -19,13 +19,13 @@ type Tweet = {
   updatedAt: string;
 };
 
-type AppProps = {
+type Props = {
   _id: string;
   likes: string[];
   setTweet: (tweet: Tweet) => void;
 };
 
-const TweetFooter = ({ _id, likes, setTweet }: AppProps) => {
+const TweetFooter = ({ _id, likes, setTweet }: Props) => {
   const { user, setUser } = useAuth();
   const liked = likes.includes(user._id);
 

@@ -12,13 +12,13 @@ document.body.appendChild(modalRoot);
 Modal.setAppElement("#modal-root");
 Modal.defaultStyles = {}; // Flushes all of react-modal's styles
 
-type AppProps = {
+type Props = {
   modalIsOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
   setProfile: (user: User) => void;
 };
 
-const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }: AppProps) => {
+const UpdateProfile = ({ modalIsOpen, setIsOpen, setProfile }: Props) => {
   const { user, setUser } = useAuth();
 
   const [name, setName] = useState(user.name || "");

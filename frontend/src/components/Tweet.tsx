@@ -4,11 +4,11 @@ import TweetBody from "./TweetBody";
 import TweetFooter from "./TweetFooter";
 import type { Tweet as TweetType } from "../types";
 
-type AppProps = {
+type Props = {
   tweet: TweetType;
 };
 
-const Tweet = (props: AppProps) => {
+const Tweet = (props: Props) => {
   const [tweet, setTweet] = useState(props.tweet);
 
   return (

@@ -86,7 +86,6 @@ const Signup = () => {
           </button>
         </form>
         <FormError message={error} />
-        {/* {error && <p className="text-red-500">Authentication failed.</p>} */}
         <p className="mt-10 mb-4">Don't have an account?</p>
         <Link
           className="bg-white hover:bg-blue-50 text-blue-500 text-center border border-gray-400 rounded-full py-2 px-4 font-bold block w-full"

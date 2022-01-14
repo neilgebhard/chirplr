@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-type AppProps = {
+type Props = {
   name: string;
   username: string;
   createdAt: string;
   text: string;
 };
 
-const TweetBody = ({ name, username, createdAt, text }: AppProps) => {
+const TweetBody = ({ name, username, createdAt, text }: Props) => {
   return (
     <>
       <Link to={`/${username}`}>

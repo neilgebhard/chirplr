@@ -1,10 +1,10 @@
 import { BiError } from "react-icons/bi";
 
-type AppProps = {
+type Props = {
   message?: string;
 };
 
-const FormError = ({ message }: AppProps) => {
+const FormError = ({ message }: Props) => {
   return (
     <p className="mb-3 text-red-500 flex items-center gap-1">
       {message && (
