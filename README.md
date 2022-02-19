@@ -9,11 +9,11 @@
 
 The live demo is deployed on Heroku: https://neilstwitter.herokuapp.com/
 
-Feel free to check out the app. Just like Twitter, you are forced to make an account before using the app. You can enter any email during the signup process. If you would prefer not to make an account, you can use the test account with email `test@test.com` and password `password123`.
+Feel free to check out the app. Just like Twitter, you are forced to make an account before using the app. You can enter any email during the signup process. If you would prefer to not make an account, you can use the test account with email `test@test.com` and password `password123`.
 
 ## General info
 
-This repository holds the source code for a Reddit clone. The features of the app include:
+This repository holds the source code for a Twitter clone. The features of the app include:
 
 Features so far:
 
