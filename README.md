@@ -23,14 +23,6 @@ Features so far:
 - **Likes**: Like other users' tweets
 - **Profile**: Update various aspects of your profile
 
-## Why I built the project this way
-
-- I decided to make a clone so that my primary focus would be on the development process. By copying an existing application, I'm able to avoid creating designs from scratch or doing product development.
-- For state management, I realized that many modern React apps aren't using Redux anymore. Nowadays, there are many viable alternatives such as react-query, MobX, Zustand, and Recoil. Therefore, I used `useState` and `Context` because I wanted to establish and prove my foundation in React's core features and stay technology-agnostic. Not to mention, many of the concepts between state management systems share similarities.
-- I used `TypeScript` because the industry is gravitating towards it and it touts many benefits. Small bugs become so much easier to catch, especially ones that are masterfully hidden through JavaScript's dynamic typing. Refactoring and reiterating code becomes a breeze with TypeScript's code completion and IntelliSense.
-- Even though I'm mainly a **front-end developer**, my aim is to gain a well-rounded perspective on developing web applications. Hence, I made this app full-stack to provide myself with an optimal learning experience. For a front-end developer, there are many insights gained by developing a back-end such as learning about `HTTP`, `API design`, and `authentication`.
-- Testing is important for ensuring that an application is working as intended for users. It helps detect and protect code from bugs as changes are made to an application. `React-testing-library` is the standard as a unit and integration testing framework for React apps, so I used the technology in this project. You can see some of the code I wrote using it [here](https://github.com/neilgebhard/twitter-clone/tree/master/frontend/src/__tests__).
-
 ## Technologies
 
 Some frameworks and libraries this project is made with:
