@@ -1,21 +1,12 @@
-# A clone of Twitter
+# Twitter clone
 
-- [General info](#general-info)
-- [Why I built the project this way](#technologies)
-- [Technologies](#technologies)
-- [Setup](#setup)
+This repository holds the source code for a Twitter clone. The live demo is deployed on Heroku: https://neilstwitter.herokuapp.com/
 
-## Demo
+**Test account**
+username: `test@test.com`
+password: `password123`.
 
-The live demo is deployed on Heroku: https://neilstwitter.herokuapp.com/
-
-Feel free to check out the app. Just like Twitter, you are forced to make an account before using the app. You can enter any email during the signup process. If you would prefer to not make an account, you can use the test account with email `test@test.com` and password `password123`.
-
-## General info
-
-This repository holds the source code for a Twitter clone. The features of the app include:
-
-Features so far:
+## Features
 
 - **Authentication**: signup, login, logout, and persistence
 - **Tweets**: Add a tweet to your account
@@ -25,20 +16,18 @@ Features so far:
 
 ## Technologies
 
-Some frameworks and libraries this project is made with:
-
 Frontend:
 
-- TypeScript: 4.5.4
-- React: 17.0.2
+- React
+- TypeScript
 - Tailwind CSS
-- react-router-dom: 5.3.0
+- react-router-dom
 
 Backend:
 
 - MongoDB
-- Express: 4.17.1
-- mongoose: 6.0.11
+- Express
+- mongoose
 - JSON web tokens
 
 Testing:
