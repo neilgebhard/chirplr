@@ -1,6 +1,6 @@
-# Twitter clone
+# Chirplr
 
-This repository holds the source code for a Twitter clone. The live demo is deployed on Heroku: https://neilstwitter.herokuapp.com/
+This repository holds the source code for a Chirplr, a full-stack web application featuring messages, likes, follows, and authentication. The live demo is deployed on Heroku: https://chirplr.herokuapp.com/
 
 **Test account**
 username: `test@test.com`
@@ -60,7 +60,7 @@ REACT_APP_apiURL=http://localhost:3001
 Install dependencies using npm:
 
 ```
-$ cd ./mern-twitter
+$ cd ./chirplr
 $ npm install
 $ npm run dev
 ```

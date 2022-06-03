@@ -1,7 +1,7 @@
 {
-  "name": "mern-twitter",
+  "name": "chirplr",
   "version": "1.0.0",
-  "description": "A twitter clone using the MERN stack",
+  "description": "A full-stack web application with messages, likes, follows, and authentication",
   "main": "index.js",
   "scripts": {
     "start": "node backend/server",
